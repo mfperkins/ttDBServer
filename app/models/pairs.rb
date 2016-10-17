@@ -8,6 +8,10 @@ class Pairs
     all_pairs
   end
 
+  def create(key,value)
+    @all_pairs[key] = value
+  end
+
   private
 
   attr_reader :all_pairs
