@@ -4,7 +4,7 @@ require './app/app'
 require_relative 'spec_helper'
 require 'rack/test'
 
-describe 'TTDBServer' do
+describe 'Server tests' do
   include Rack::Test::Methods
 
   def app
