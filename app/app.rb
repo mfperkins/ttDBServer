@@ -19,9 +19,12 @@ class TTDBServer < Sinatra::Base
     end
   end
 
-  get '/set' do |somekey, somevalue|
-    "somekey somevalue"
-    " #{params.inspect}"
+  get '/set*' do
+    temp_object = params.first
+    @object = {temp_object[0] => temp_object[1]}
+    puts @object.is_a?(Hash)
+    puts @object
+    "#{@object}"
   end
 
   # start the server if ruby file executed directly
