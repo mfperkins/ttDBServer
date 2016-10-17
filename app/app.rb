@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class ttDBServer < Sinatra::Base
+class TTDBServer < Sinatra::Base
   get '/' do
     'Hello ttDBServer!'
   end
