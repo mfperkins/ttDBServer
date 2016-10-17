@@ -12,6 +12,10 @@ class Pairs
     @all_pairs[key] = value
   end
 
+  def first(key)
+    @all_pairs.fetch(key)
+  end
+
   private
 
   attr_reader :all_pairs
