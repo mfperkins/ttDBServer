@@ -28,10 +28,8 @@ class TTDBServer < Sinatra::Base
 
   get '/set*' do
     @current_pairs = current_pairs
-    temp_object = params.first
-    @current_pairs.create(temp_object[0],temp_object[1])
+    @current_pairs.create(params.first[0],params.first[1])
     session[:current_pairs] = @current_pairs
-    puts @current_pairs.get_all_pairs
     "#{@current_pairs.get_all_pairs}"
   end
 
