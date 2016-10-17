@@ -24,4 +24,11 @@ describe 'Server tests' do
     expect(last_response.body).to eq('Beagle')
   end
 
+  it "'/get' returns a friendly error message if it doesn't have your key" do
+    get '/set?myDog=Beagle'
+    get '/get?key=iceCream'
+    expect(last_response).to be_ok
+    expect(last_response.body).to eq("Sorry, we don't have that key-value pair stored")
+  end
+
 end

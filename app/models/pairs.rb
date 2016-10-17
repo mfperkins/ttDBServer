@@ -13,7 +13,8 @@ class Pairs
   end
 
   def first(key)
-    @all_pairs.fetch(key)
+    error_msg = "Sorry, we don't have that key-value pair stored"
+    @all_pairs[key] || error_msg
   end
 
   private

@@ -19,11 +19,7 @@ class TTDBServer < Sinatra::Base
   get '/get' do
     @current_pairs = current_pairs
     key = params[:key]
-    if @current_pairs.first(key) != nil
-      "#{@current_pairs.first(key)}"
-    else
-      "Sorry, we don't have that key-value pair stored"
-    end
+    "#{@current_pairs.first(key)}"
   end
 
   get '/set*' do
