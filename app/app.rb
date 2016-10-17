@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class TTDBServer < Sinatra::Base
   get '/' do
-    'Hello ttDBServer!'
+    "Hello World #{params[:name]}".strip
   end
 
   # start the server if ruby file executed directly
