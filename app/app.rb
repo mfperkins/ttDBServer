@@ -12,7 +12,7 @@ class TTDBServer < Sinatra::Base
 
   get '/get' do
     key = params[:key]
-    @object = { 'myDog' => 'Beagle' }
+    @object = session[:object]
     if @object.has_key?(key)
       value = @object[key]
       "#{value}"
@@ -22,8 +22,7 @@ class TTDBServer < Sinatra::Base
   get '/set*' do
     temp_object = params.first
     @object = {temp_object[0] => temp_object[1]}
-    puts @object.is_a?(Hash)
-    puts @object
+    session[:object] = @object
     "#{@object}"
   end
 

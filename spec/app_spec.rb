@@ -19,14 +19,13 @@ describe 'TTDBServer' do
 
   it "stores a key-value pair at '/set'" do
     get '/set?myDog=Beagle'
-    puts last_response
     expect(last_response).to be_ok
     expect(last_response.body).to eq('{"myDog"=>"Beagle"}')
   end
 
   it "returns a value '/get'" do
+    get '/set?myDog=Beagle'
     get '/get?key=myDog'
-    puts last_response
     expect(last_response).to be_ok
     expect(last_response.body).to eq('Beagle')
   end
